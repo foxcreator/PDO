@@ -15,13 +15,19 @@ function LoadDataUsers() // Загрузка списка юзеров
 
     foreach ($query as $key)
     {
-        echo "<tr><td><a href=\"user.php?id=".$key['id']."\">".$key['id'].". ".$key['name']."</a></td></tr>";
+        echo "<tr><td><a href=\"scripts/user.php?id=".$key['id']."\">
+        ".$key['id'].". ".$key['name']. "
+        </a>
+        <form action='scripts/deleteUser.php' method='post'>
+        <input type='checkbox' name='check[]' value='" .$key['id']."'>
+        </td>
+";
     }
 
 }
 
 
-function CurrentUser($id_user) //Вывод инфы по конкретному пользователю
+function CurrentUser($id_user)
 {
     $db = DB::connect();
     if(empty($id_user))
@@ -45,4 +51,15 @@ function CurrentUser($id_user) //Вывод инфы по конкретному
                 <td>".$array['0']['age']."</td>
             ");
     }
+}
+
+function deleteUser($item)
+{
+    $db = DB::connect();
+
+    $sql = "DELETE FROM users WHERE id='$item'";
+    $sql = $db->prepare($sql);
+    $sql->execute();
+
+    header('Location: /');
 }

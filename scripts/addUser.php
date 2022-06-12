@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . '/const.php';
+    require_once '../config/const.php';
 
 $name = $_POST['name'];
 $surname = $_POST['surname'];

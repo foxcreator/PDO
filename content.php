@@ -9,24 +9,31 @@
 </head>
 <body>
 <div style="float: left">
-<form action="/createTable.php" method="post">
+<form action="/scripts/createTable.php" method="post">
     <button type="submit" name="create_table">Create Table 'Users'</button>
 </form>
 <br>
 </div>
 <div style="float: left; margin-left: 30px">
-<form action="addUser.php" method="post">
-    <input type="text" name="name" id="name" placeholder="Your name"><br><br>
-    <input type="text" name="surname" id="surname" placeholder="Your surname"><br><br>
-    <input type="text" name="age" id="age" placeholder="Your age"><br><br>
-    <input type="email" name="email" id="email" placeholder="Your email"><br><br>
+<form action="scripts/addUser.php" method="post">
+    <input type="text" name="name" id="name" placeholder="Your name" required><br><br>
+    <input type="text" name="surname" id="surname" placeholder="Your surname" required><br><br>
+    <input type="text" name="age" id="age" placeholder="Your age" required><br><br>
+    <input type="email" name="email" id="email" placeholder="Your email" required><br><br>
     <button type="submit" name="add_user">Create User</button>
 </form>
 </div>
-<div>
-    <table width=60% align="center">
-        <?php LoadDataUsers(); // Вызываешь функцию чтобы выпал список с юзерами ?>
+<div style="float: left; margin-left: 30px; width: 200px">
+    <table width=80% align="center">
+        <?php
+        LoadDataUsers();
+        ?>
+        <td>
+        <button type="submit" name="delete">Delete Users</button>
+        </td>
+            </form>
     </table>
+
 </div>
 </body>
 </html>

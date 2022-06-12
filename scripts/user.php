@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__ . '/listUsers.php';
-//$user_array = CurrentUser($_GET['id']);
+require_once '../config/helper.php';
 ?>
 
 <table width="60%">
