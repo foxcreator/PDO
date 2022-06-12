@@ -1,3 +1,7 @@
+<?php
+$db = new DB();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
 <div style="float: left; margin-left: 30px; width: 200px">
     <table width=80% align="center">
         <?php
-        LoadDataUsers();
+        $db->LoadDataUsers();
         ?>
         <td>
         <button type="submit" name="delete">Delete Users</button>

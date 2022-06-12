@@ -1,5 +1,6 @@
 <?php
 require_once '../config/helper.php';
+$db = new DB();
 ?>
 
 <table width="60%">
@@ -11,7 +12,7 @@ require_once '../config/helper.php';
         <td>Age</td>
     </tr>
     <tr>
-       <?php CurrentUser($_GET['id']); ?>
+       <?php $db->CurrentUser($_GET['id']); ?>
 
     </tr>
 </table>
